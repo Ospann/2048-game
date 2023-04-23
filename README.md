@@ -13,7 +13,11 @@ This implementation of the game uses React for the user interface, TypeScript fo
 To start the project, follow these steps:
 
 1.Clone the repository to your local machine.
+
 2.Install dependencies by running npm install.
+
 3.Start the development server by running npm start.
+
 4.Open your browser and go to http://localhost:3000 to see the game in action.
+
 That's it! You should now be able to play the 2048 game on your local machine. Have fun!
