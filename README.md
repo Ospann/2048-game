@@ -1,23 +1,30 @@
-# 2048 Game with React, TypeScript, and Zustand
+# React + TypeScript + Vite
 
-Welcome to my implementation of the classic 2048 game using React, TypeScript, and Zustand! This project is a fun and interactive way to practice your coding skills while enjoying a challenging game.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Description
+Currently, two official plugins are available:
 
-2048 is a classic puzzle game in which the player slides numbered tiles on a grid to combine them and create a tile with the number 2048. The game is won when the player creates a tile with the number 2048, but the challenge comes from the limited space and the need to strategically combine tiles to reach the goal.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-This implementation of the game uses React for the user interface, TypeScript for type checking, and Zustand for state management. The code is well-organized and easy to read, making it a great learning resource for anyone looking to improve their coding skills.
+## Expanding the ESLint configuration
 
-## How to Start the Project
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-To start the project, follow these steps:
+- Configure the top-level `parserOptions` property like this:
 
-1.Clone the repository to your local machine.
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-2.Install dependencies by running npm install.
-
-3.Start the development server by running npm start.
-
-4.Open your browser and go to http://localhost:3000 to see the game in action.
-
-That's it! You should now be able to play the 2048 game on your local machine. Have fun!
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

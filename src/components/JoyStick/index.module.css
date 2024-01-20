@@ -1,0 +1,35 @@
+.arrowUp {
+    transform: rotate(-45deg);
+}
+.arrowRight {
+    transform: rotate(45deg);
+}
+.arrowLeft {
+    transform: rotate(-135deg);
+}
+
+.arrowDown {
+    transform: rotate(135deg);
+}
+.JoyStick {
+    background-color: brown;
+    border-radius: 50%;
+    width: 120px;
+    display: flex;
+    aspect-ratio: 1 / 1;
+    align-items: center;
+    transform: rotate(45deg);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.JoyStick > div {
+    display: flex;
+    width: 90%;
+    cursor: pointer;
+}
+
+.JoyStick > div > div {
+    width: 50%;
+    text-align: center;
+}

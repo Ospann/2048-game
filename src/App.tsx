@@ -1,12 +1,7 @@
-import Board from "./components/Board";
+import Board from './components/Board'
 
 const App = () => {
-
-  return (
-    <div>
-      <Board />
-    </div>
-  );
+    return <Board />
 }
 
-export default App;
+export default App

@@ -1,167 +1,102 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(23, 23, 34);
-  font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: rgb(23, 23, 34);
+    font-family: 'Press Start 2P', cursive;
 }
 
 p {
-  text-align: center;
+    text-align: center;
 }
 
 table {
-  margin: 0 auto;
-  background-color: #fdfdfd;
+    margin: 0 auto;
+    background-color: #fdfdfd;
+    width: 100%;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  align-items: center;
+tr {
+    width: 100%;
 }
 
-.button {
-  background-color: brown;
-  border-radius: 5px;
-  color: #C24040;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  height: 50px;
-  cursor: pointer;
-  height: 50px;
+td {
+    width: calc(100% / 5);
 }
 
 .cell {
-  height: 90px;
-  width: 90px;
-  background-color: #303030;
-  /* border-radius: 5px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    aspect-ratio: 1 /1;
+    background-color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .color-2 {
-  background-color: #50C8FF;
+    background-color: #50c8ff;
 }
 
 .color-4 {
-  background-color: green;
+    background-color: green;
 }
 
 .color-8 {
-  background-color: red;
+    background-color: red;
 }
 
 .color-16 {
-  background-color: orange;
+    background-color: orange;
 }
 
 .color-32 {
-  background-color: yellow;
+    background-color: #dbdb0e;
 }
 
 .color-64 {
-  background-color: blue;
+    background-color: blue;
 }
 
 .color-128 {
-  background-color: purple;
+    background-color: purple;
 }
 
 .color-256 {
-  background-color: pink;
+    background-color: pink;
 }
 
 .color-512 {
-  background-color: #50C8FF;
+    background-color: #50c8ff;
 }
 
 .color-1024 {
-  background-color: green;
+    background-color: green;
 }
 
 .color-2048 {
-  background-color: blue;
+    background-color: blue;
 }
 
 .number {
-  color: #FFF;
-  font-size: 35px;
-}
-
-.score {
-  margin: 1.5rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.Board {
-  margin-top: 1rem;
-  width: 100%;
-  height: 100vh;
-  max-height: 700px;
-  max-width: 450px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-  background-color: rgb(238 226 76);
-}
-
-.JoyStick {
-  background-color: brown;
-  border-radius: 50%;
-  width: 120px;
-  display: flex;
-  aspect-ratio: 1 / 1;
-  align-items: center;
-  transform: rotate(45deg);
-  flex-direction: column;
-  justify-content: center;
-}
-
-.JoyStick>div {
-  display: flex;
-  width: 90%;
-  cursor: pointer;
-}
-
-.JoyStick>div>div {
-  width: 50%;
-  text-align: center;
-}
-
-.display {
-  width: 100%;
-  height: 450px;
-  border-radius: 5px;
-  background-color: #303030;
-  display: flex;
-  color: #FFF;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  padding-bottom: 1rem;
+    color: #fff;
+    font-size: 35px;
 }
 
 .tile {
-  width: 90px;
-  height: 90px;
-  border: 5px solid #bbada0;
+    width: 90px;
+    height: 90px;
+    border: 5px solid #bbada0;
 
-  font-size: 40px;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dialog {
-  position: fixed;
-  top: 30%;
-  background-color: rgb(238, 234, 17);
+    position: fixed;
+    top: 30%;
+    background-color: rgb(238, 234, 17);
 }
