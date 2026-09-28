@@ -1,10 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import * as path from 'path'
+/// <reference types="vitest/config" />
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
 export default defineConfig({
-    plugins: [react()],
-    resolve: {
-        alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
-    },
-})
+  plugins: [react()],
+  test: {
+    environment: "node",
+    include: ["src/game/*.test.ts"],
+  },
+});

@@ -1,7 +1,6 @@
-import Board from './components/Board'
+import type { ReactElement } from "react";
+import Game from "./components/Game";
 
-const App = () => {
-    return <Board />
+export default function App(): ReactElement {
+  return <Game />;
 }
-
-export default App

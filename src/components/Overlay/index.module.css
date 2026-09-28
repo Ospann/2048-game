@@ -1,0 +1,83 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: rgba(10, 12, 18, 0.55);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: reveal 320ms ease 450ms both;
+  z-index: 2;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.won .title {
+  color: #ffd54d;
+  text-shadow: 0 0 30px rgba(255, 200, 60, 0.55);
+}
+
+.over .title {
+  color: var(--text);
+  text-shadow: 0 0 24px rgba(160, 107, 255, 0.4);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.primary,
+.secondary {
+  padding: 12px 22px;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    filter 140ms ease;
+}
+
+.primary {
+  border: none;
+  background: linear-gradient(120deg, var(--accent-a), var(--accent-b));
+  color: #0a0c12;
+}
+
+.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+.primary:hover,
+.secondary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.primary:focus-visible,
+.secondary:focus-visible {
+  outline: 2px solid var(--accent-a);
+  outline-offset: 2px;
+}

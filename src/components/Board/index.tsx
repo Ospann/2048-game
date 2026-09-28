@@ -1,53 +1,35 @@
-import { useEffect } from 'react'
-import { useAppContext } from '@/utils/provider/Context'
-import placeRandom from '@/utils/helpers/placeRandom'
-import JoyStick from '@/components/JoyStick'
-import Screen from '@/components/Screen'
-import styles from './index.module.css'
+import type { ReactElement } from "react";
+import { SIZE } from "../../game/board";
+import type { Direction, Tile as TileModel } from "../../game/types";
+import { useSwipe } from "../../hooks/useSwipe";
+import Tile from "../Tile";
+import styles from "./index.module.css";
 
-const Board = () => {
-    const { setBoard, setScore, setGameOver, gameOver } = useAppContext()
-
-    function initBoard() {
-        let newBoard = [
-            [0, 0, 0, 0],
-            [0, 0, 0, 0],
-            [0, 0, 0, 0],
-            [0, 0, 0, 0],
-        ]
-        newBoard = placeRandom(placeRandom(newBoard))
-        setBoard(newBoard)
-        setScore(0)
-        setGameOver(false)
-    }
-
-    useEffect(() => {
-        initBoard()
-    }, [])
-
-    return (
-        <div className={styles.Board}>
-            <div
-                style={{
-                    height: '70%',
-                    width: '100%',
-                    padding: '1rem',
-                    boxSizing: 'border-box',
-                }}
-            >
-                <Screen />
-            </div>
-            <div className={styles.buttons}>
-                <JoyStick />
-                <div role="button" className={styles.button} onClick={initBoard}>
-                    Reload
-                </div>
-            </div>
-            <dialog className="dialog" open={gameOver}>
-                You're loser!
-            </dialog>
-        </div>
-    )
+interface BoardProps {
+  tiles: TileModel[];
+  onMove: (direction: Direction) => void;
 }
 
-export default Board
+const CELLS = Array.from({ length: SIZE * SIZE }, (_, index) => index);
+
+export default function Board({ tiles, onMove }: BoardProps): ReactElement {
+  const swipeHandlers = useSwipe(onMove);
+  const rendered = tiles
+    .flatMap((tile) => [...(tile.mergedFrom ?? []), tile])
+    .sort((a, b) => a.id - b.id);
+
+  return (
+    <div className={styles.board} {...swipeHandlers}>
+      <div className={styles.grid}>
+        {CELLS.map((cell) => (
+          <div key={cell} className={styles.cell} />
+        ))}
+      </div>
+      <div className={styles.tiles}>
+        {rendered.map((tile) => (
+          <Tile key={tile.id} tile={tile} />
+        ))}
+      </div>
+    </div>
+  );
+}
